@@ -7,9 +7,7 @@ const getAll = async (req, res) => {
 
     if (!collection) {
         // if collection does not exist
-        return res.status(404).json({
-            error: 'Some error occurred connecting to the collection.'
-        });
+        return res.status(404).json('Some error occurred connecting to the collection.');
     }
 
     const result = await collection.find().toArray();
@@ -21,7 +19,7 @@ const getSingle = async (req, res) => {
     //#swagger.tags=['Boardgames']
     if (!ObjectId.isValid(req.params.id)) {
         // check if valid id format
-        res.status(400).json('Must use a valid id to find boardgame.');
+        return res.status(400).json('Must use a valid id to find boardgame.');
     }
 
     const boardgameId = new ObjectId(req.params.id);
@@ -29,9 +27,7 @@ const getSingle = async (req, res) => {
 
     if (!collection) {
         // if collection does not exist
-        return res.status(404).json({
-            error: 'Some error occurred connecting to the collection.'
-        });
+        return res.status(404).json('Some error occurred connecting to the collection.');
     }
 
     const result = await collection.find({ _id: boardgameId }).toArray();
@@ -45,9 +41,7 @@ const createBoardgame = async (req, res) => {
 
     if (!collection) {
         // if collection does not exist
-        return res.status(404).json({
-            error: 'Some error occurred connecting to the collection.'
-        });
+        return res.status(404).json('Some error occurred connecting to the collection.');
     }
 
     const newBoardgame = {
@@ -66,10 +60,7 @@ const createBoardgame = async (req, res) => {
     if (response.acknowledged) {
         res.status(201).json(response);
     } else {
-        res.status().json(
-            response.error ||
-                'Some error occurred while creating the boardgame.'
-        );
+        res.status().json(response.error || 'Some error occurred while creating the boardgame.');
     }
 };
 
@@ -77,7 +68,7 @@ const updateBoardgame = async (req, res) => {
     //#swagger.tags=['Boardgames']
     if (!ObjectId.isValid(req.params.id)) {
         // check if valid id format
-        res.status(400).json('Must use a valid id to find boardgame.');
+        return res.status(400).json('Must use a valid id to find boardgame.');
     }
 
     const boardgameId = new ObjectId(req.params.id);
@@ -85,9 +76,7 @@ const updateBoardgame = async (req, res) => {
 
     if (!collection) {
         // if collection does not exist
-        return res.status(404).json({
-            error: 'Some error occurred connecting to the collection.'
-        });
+        return res.status(404).json('Some error occurred connecting to the collection.');
     }
 
     const boardgame = {
@@ -109,10 +98,7 @@ const updateBoardgame = async (req, res) => {
     if (response.modifiedCount > 0) {
         res.status(204).json(response);
     } else {
-        res.status(500).json(
-            response.error ||
-                'Some error occurred while updating the boardgame.'
-        );
+        res.status(500).json(response.error || 'Some error occurred while updating the boardgame.');
     }
 };
 
@@ -128,9 +114,7 @@ const deleteBoardgame = async (req, res) => {
 
     if (!collection) {
         // if collection does not exist
-        return res.status(404).json({
-            error: 'Some error occurred connecting to the collection.'
-        });
+        return res.status(404).json('Some error occurred connecting to the collection.');
     }
 
     const response = await collection.deleteOne({ _id: boardgameId }, true);
@@ -138,10 +122,7 @@ const deleteBoardgame = async (req, res) => {
     if (response.deletedCount > 0) {
         res.status(204).send();
     } else {
-        res.status(500).json(
-            response.error ||
-                'Some error occurred while deleting the boardgame.'
-        );
+        res.status(500).json(response.error || 'Some error occurred while deleting the boardgame.');
     }
 };
 

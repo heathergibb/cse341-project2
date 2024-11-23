@@ -4,7 +4,7 @@ GET http://localhost:5500/players
 
 
 ### Get player by id
-GET http://localhost:5500/players/67422a209e1b5d72a40c9a32
+GET http://localhost:5500/players/674229e59e1b5d72a40c9310
 
 
 ### Create player
@@ -12,7 +12,7 @@ POST http://localhost:5500/players HTTP/1.1
 content-type: application/json
 
 {
-    "firstName":"Heather",
+    "firstName":"New Player",
     "lastName":"Gibb"
 }
 
@@ -28,13 +28,15 @@ content-type: application/json
 ### DELETE player
 DELETE http://localhost:5500/players/67422a209e1b5d72a40c9a32 HTTP/1.1
 
-
+////////////////
+// BOARDGAMES //
+////////////////
 ### Get all boardgames
 GET http://localhost:5500/boardgames
 
 
 ### Get boardgame by id
-GET http://localhost:5500/boardgames/67422767b00f6f4f62b77e79
+GET http://localhost:5500/boardgames/6742566ddda40700efbfa7b5
 
 
 ### Create boardgame
@@ -42,19 +44,19 @@ POST http://localhost:5500/boardgames HTTP/1.1
 content-type: application/json
 
 {
-    "name":"New Game",
+    "name":"Sample Game",
     "description":"Game description",
-    "brand": "Brand",
+    "brand": "brand name",
     "numPlayers": "1-6",
     "ages": "8+",
     "playingTime": "60 mins",
     "yearCreated": "2010",
-    "complexityRating": "2.6"
+    "complexityRating": "3.5"
 }
 
 
 ### PUT boardgame
-PUT http://localhost:5500/boardgames/67422767b00f6f4f62b77e79 HTTP/1.1
+PUT http://localhost:5500/boardgames/6742566ddda40700efbfa7b5 HTTP/1.1
 content-type: application/json
 
 {
@@ -68,4 +70,4 @@ content-type: application/json
     "complexityRating": "3.5"
 }
 ### DELETE baordgame
-DELETE http://localhost:5500/boardgames/67415d008c20f869f259b4c6 HTTP/1.1
+DELETE http://localhost:5500/boardgames/6742566ddda40700efbfa7b5 HTTP/1.1

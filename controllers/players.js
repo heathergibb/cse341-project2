@@ -7,11 +7,7 @@ const getAll = async (req, res) => {
 
     if (!collection) {
         // if collection does not exist
-        return res
-            .status(404)
-            .json({
-                error: 'Some error occurred connecting to the collection.'
-            });
+        return res.status(404).json('Some error occurred connecting to the collection.');
     }
 
     const result = await collection.find().toArray();
@@ -23,7 +19,7 @@ const getSingle = async (req, res) => {
     //#swagger.tags=['Players']
     if (!ObjectId.isValid(req.params.id)) {
         // check if valid id format
-        res.status(400).json('Must use a valid id to find player.');
+        return res.status(400).json('Must use a valid id to find player.');
     }
 
     const playerId = new ObjectId(req.params.id);
@@ -31,11 +27,7 @@ const getSingle = async (req, res) => {
 
     if (!collection) {
         // if collection does not exist
-        return res
-            .status(404)
-            .json({
-                error: 'Some error occurred connecting to the collection.'
-            });
+        return res.status(404).json('Some error occurred connecting to the collection.');
     }
 
     const result = await collection.find({ _id: playerId }).toArray();
@@ -49,11 +41,7 @@ const createPlayer = async (req, res) => {
 
     if (!collection) {
         // if collection does not exist
-        return res
-            .status(404)
-            .json({
-                error: 'Some error occurred connecting to the collection.'
-            });
+        return res.status(404).json('Some error occurred connecting to the collection.');
     }
 
     const newPlayer = {
@@ -76,7 +64,7 @@ const updatePlayer = async (req, res) => {
     //#swagger.tags=['Players']
     if (!ObjectId.isValid(req.params.id)) {
         // check if valid id format
-        res.status(400).json('Must use a valid id to find player.');
+        return res.status(400).json('Must use a valid id to find player.');
     }
 
     const playerId = new ObjectId(req.params.id);
@@ -84,11 +72,7 @@ const updatePlayer = async (req, res) => {
 
     if (!collection) {
         // if collection does not exist
-        return res
-            .status(404)
-            .json({
-                error: 'Some error occurred connecting to the collection.'
-            });
+        return res.status(404).json('Some error occurred connecting to the collection.');
     }
 
     const player = {
@@ -119,11 +103,7 @@ const deletePlayer = async (req, res) => {
 
     if (!collection) {
         // if collection does not exist
-        return res
-            .status(404)
-            .json({
-                error: 'Some error occurred connecting to the collection.'
-            });
+        return res.status(404).json('Some error occurred connecting to the collection.');
     }
 
     const response = await collection.deleteOne({ _id: playerId }, true);
