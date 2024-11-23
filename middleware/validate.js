@@ -22,6 +22,16 @@ const boardgameValidationRules = () => {
             .escape()
             .notEmpty()
             .withMessage('Number of players is required.'),
+        body('ages')
+            .trim()
+            .escape()
+            .notEmpty()
+            .withMessage('Age range of players is required.'),
+        body('playingTime')
+            .trim()
+            .escape()
+            .notEmpty()
+            .withMessage('Playing time is required.'),
         body('yearCreated')
             .optional()
             .trim()
