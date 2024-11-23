@@ -1,14 +1,14 @@
 // PRODUCTION
 ### Get all players
-GET http://https://cse341-project2-psq1.onrender.com/players
+GET https://cse341-project2-psq1.onrender.com/players
 
 
 ### Get player by id
-GET http://https://cse341-project2-psq1.onrender.com/players/67422a209e1b5d72a40c9a32
+GET https://cse341-project2-psq1.onrender.com/players/67422a209e1b5d72a40c9a32
 
 
 ### Create player
-POST http://https://cse341-project2-psq1.onrender.com/players HTTP/1.1
+POST https://cse341-project2-psq1.onrender.com/players HTTP/1.1
 content-type: application/json
 
 {
@@ -18,7 +18,7 @@ content-type: application/json
 
 
 ### PUT player
-PUT http://https://cse341-project2-psq1.onrender.com/players/674229e59e1b5d72a40c9a30 HTTP/1.1
+PUT https://cse341-project2-psq1.onrender.com/players/674229e59e1b5d72a40c9a30 HTTP/1.1
 content-type: application/json
 
 {
@@ -26,19 +26,19 @@ content-type: application/json
     "lastName":"Gibb"
 }
 ### DELETE player
-DELETE http://https://cse341-project2-psq1.onrender.com/players/67422a209e1b5d72a40c9a32 HTTP/1.1
+DELETE https://cse341-project2-psq1.onrender.com/players/67422a209e1b5d72a40c9a32 HTTP/1.1
 
 
 ### Get all boardgames
-GET http://https://cse341-project2-psq1.onrender.com/boardgames
+GET https://cse341-project2-psq1.onrender.com/boardgames
 
 
 ### Get boardgame by id
-GET http://https://cse341-project2-psq1.onrender.com/boardgames/67422767b00f6f4f62b77e79
+GET https://cse341-project2-psq1.onrender.com/boardgames/67422767b00f6f4f62b77e79
 
 
 ### Create boardgame
-POST http://https://cse341-project2-psq1.onrender.com/boardgames HTTP/1.1
+POST https://cse341-project2-psq1.onrender.com/boardgames HTTP/1.1
 content-type: application/json
 
 {
@@ -54,7 +54,7 @@ content-type: application/json
 
 
 ### PUT boardgame
-PUT http://https://cse341-project2-psq1.onrender.com/boardgames/67422767b00f6f4f62b77e79 HTTP/1.1
+PUT https://cse341-project2-psq1.onrender.com/boardgames/67422767b00f6f4f62b77e79 HTTP/1.1
 content-type: application/json
 
 {
@@ -68,4 +68,4 @@ content-type: application/json
     "complexityRating": "3.5"
 }
 ### DELETE baordgame
-DELETE http://https://cse341-project2-psq1.onrender.com/boardgames/67415d008c20f869f259b4c6 HTTP/1.1
+DELETE https://cse341-project2-psq1.onrender.com/boardgames/67415d008c20f869f259b4c6 HTTP/1.1

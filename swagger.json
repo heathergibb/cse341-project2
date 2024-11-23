@@ -12,19 +12,6 @@
     "https"
   ],
   "paths": {
-    "/": {
-      "get": {
-        "tags": [
-          "Welcome"
-        ],
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/boardgames/": {
       "get": {
         "tags": [
