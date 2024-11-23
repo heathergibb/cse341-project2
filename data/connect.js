@@ -19,13 +19,6 @@ const connectToDB = (callback) => {
         });
 };
 
-// const getDb = () => {
-//     if (!_db) {
-//         throw Error('Db not initialized');
-//     }
-//     return _db;
-// };
-
 const getCollection = async (collectionName) => {
     if (!_db) {
         throw Error('Db not initialized');
@@ -55,6 +48,5 @@ const getCollection = async (collectionName) => {
 
 module.exports = {
     connectToDB,
-    // getDb,
     getCollection
 };
