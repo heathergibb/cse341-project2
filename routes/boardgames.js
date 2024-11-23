@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const { boardgameValidationRules, validate } = require('../middleware/validate');
+const {
+    boardgameValidationRules,
+    validate
+} = require('../middleware/validate');
 const { handleErrors } = require('../middleware/error-handling');
 const boardgamesController = require('../controllers/boardgames');
 
@@ -12,13 +15,15 @@ router.post(
     '/',
     boardgameValidationRules(),
     validate,
-    boardgamesController.createBoardgame);
+    boardgamesController.createBoardgame
+);
 
 router.put(
     '/:id',
     boardgameValidationRules(),
     validate,
-    boardgamesController.updateBoardgame);
+    boardgamesController.updateBoardgame
+);
 
 router.delete('/:id', boardgamesController.deleteBoardgame);
 

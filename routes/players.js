@@ -24,6 +24,6 @@ router.put(
 
 router.delete('/:id', playersController.deletePlayer);
 
-router.use(handleErrors)
+router.use(handleErrors);
 
 module.exports = router;

@@ -34,7 +34,9 @@ const getCollection = async (collectionName) => {
     try {
         const db = _db.db();
         const collections = await db.listCollections().toArray(); // Fetch all the connections in the db
-        const collectionExists = collections.some((col) => col.name === collectionName); // Check if collectionName exists
+        const collectionExists = collections.some(
+            (col) => col.name === collectionName
+        ); // Check if collectionName exists
 
         if (!collectionExists) {
             console.error(`Collection '${collectionName}' does not exist.`);
@@ -43,13 +45,16 @@ const getCollection = async (collectionName) => {
 
         return db.collection(collectionName); // Return the collection instance
     } catch (error) {
-        console.error(`An error occurred while fetching collection '${collectionName}':`, error);
+        console.error(
+            `An error occurred while fetching collection '${collectionName}':`,
+            error
+        );
         return null;
     }
-}
+};
 
 module.exports = {
     connectToDB,
-    // getDb, 
+    // getDb,
     getCollection
 };

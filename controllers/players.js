@@ -4,11 +4,16 @@ const ObjectId = require('mongodb').ObjectId;
 const getAll = async (req, res) => {
     //#swagger.tags=['Players']
     const collection = await mongodb.getCollection('players');
-    
-    if (!collection) { // if collection does not exist
-        return res.status(404).json({ error: "Some error occurred connecting to the collection." });
+
+    if (!collection) {
+        // if collection does not exist
+        return res
+            .status(404)
+            .json({
+                error: 'Some error occurred connecting to the collection.'
+            });
     }
-    
+
     const result = await collection.find().toArray();
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(result);
@@ -16,15 +21,21 @@ const getAll = async (req, res) => {
 
 const getSingle = async (req, res) => {
     //#swagger.tags=['Players']
-    if (!ObjectId.isValid(req.params.id)) { // check if valid id format
+    if (!ObjectId.isValid(req.params.id)) {
+        // check if valid id format
         res.status(400).json('Must use a valid id to find player.');
     }
 
-    const playerId = new ObjectId(req.params.id);   
+    const playerId = new ObjectId(req.params.id);
     const collection = await mongodb.getCollection('players');
-    
-    if (!collection) { // if collection does not exist
-        return res.status(404).json({ error: "Some error occurred connecting to the collection." });
+
+    if (!collection) {
+        // if collection does not exist
+        return res
+            .status(404)
+            .json({
+                error: 'Some error occurred connecting to the collection.'
+            });
     }
 
     const result = await collection.find({ _id: playerId }).toArray();
@@ -36,8 +47,13 @@ const createPlayer = async (req, res) => {
     //#swagger.tags=['Players']
     const collection = await mongodb.getCollection('players');
 
-    if (!collection) { // if collection does not exist
-        return res.status(404).json({ error: "Some error occurred connecting to the collection." });
+    if (!collection) {
+        // if collection does not exist
+        return res
+            .status(404)
+            .json({
+                error: 'Some error occurred connecting to the collection.'
+            });
     }
 
     const newPlayer = {
@@ -58,15 +74,21 @@ const createPlayer = async (req, res) => {
 
 const updatePlayer = async (req, res) => {
     //#swagger.tags=['Players']
-    if (!ObjectId.isValid(req.params.id)) { // check if valid id format
+    if (!ObjectId.isValid(req.params.id)) {
+        // check if valid id format
         res.status(400).json('Must use a valid id to find player.');
     }
 
     const playerId = new ObjectId(req.params.id);
     const collection = await mongodb.getCollection('players');
-    
-    if (!collection) { // if collection does not exist
-        return res.status(404).json({ error: "Some error occurred connecting to the collection." });
+
+    if (!collection) {
+        // if collection does not exist
+        return res
+            .status(404)
+            .json({
+                error: 'Some error occurred connecting to the collection.'
+            });
     }
 
     const player = {
@@ -87,15 +109,21 @@ const updatePlayer = async (req, res) => {
 
 const deletePlayer = async (req, res) => {
     //#swagger.tags=['Players']
-    if (!ObjectId.isValid(req.params.id)) { // check if valid id format
+    if (!ObjectId.isValid(req.params.id)) {
+        // check if valid id format
         return res.status(400).json('Must use a valid id to find player.');
     }
 
     const playerId = new ObjectId(req.params.id);
     const collection = await mongodb.getCollection('players');
 
-    if (!collection) { // if collection does not exist
-        return res.status(404).json({ error: "Some error occurred connecting to the collection." });
+    if (!collection) {
+        // if collection does not exist
+        return res
+            .status(404)
+            .json({
+                error: 'Some error occurred connecting to the collection.'
+            });
     }
 
     const response = await collection.deleteOne({ _id: playerId }, true);
