@@ -5,7 +5,7 @@ const doc = {
         title: 'Board Games API',
         description: 'List of Board Games and Players'
     },
-    host: 'localhost:5500',
+    host: 'cse341-project2-psq1.onrender.com',
     schemes: ['http', 'https']
 };
 

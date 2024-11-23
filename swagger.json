@@ -5,7 +5,7 @@
     "description": "List of Board Games and Players",
     "version": "1.0.0"
   },
-  "host": "https://cse341-project2-psq1.onrender.com/",
+  "host": "cse341-project2-psq1.onrender.com",
   "basePath": "/",
   "schemes": [
     "http",
@@ -79,9 +79,6 @@
           },
           "422": {
             "description": "Unprocessable Entity"
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       }
