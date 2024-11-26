@@ -5,9 +5,10 @@ const doc = {
         title: 'Board Games API',
         description: 'List of Board Games and Players'
     },
-    // host: 'cse341-project2-psq1.onrender.com',
-    host: 'localhost:5500',
-    schemes: ['http', 'https']
+    host: 'cse341-project2-psq1.onrender.com',
+    schemes: ['https']
+    // host: 'localhost:5500',
+    // schemes: ['http']
 };
 
 const outputFile = './swagger.json';
