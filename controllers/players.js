@@ -7,7 +7,9 @@ const getAll = async (req, res) => {
 
     if (!collection) {
         // if collection does not exist
-        return res.status(404).json('Some error occurred connecting to the collection.');
+        return res
+            .status(404)
+            .json('Some error occurred connecting to the collection.');
     }
 
     const result = await collection.find().toArray();
@@ -27,7 +29,9 @@ const getSingle = async (req, res) => {
 
     if (!collection) {
         // if collection does not exist
-        return res.status(404).json('Some error occurred connecting to the collection.');
+        return res
+            .status(404)
+            .json('Some error occurred connecting to the collection.');
     }
 
     const result = await collection.find({ _id: playerId }).toArray();
@@ -41,7 +45,9 @@ const createPlayer = async (req, res) => {
 
     if (!collection) {
         // if collection does not exist
-        return res.status(404).json('Some error occurred connecting to the collection.');
+        return res
+            .status(404)
+            .json('Some error occurred connecting to the collection.');
     }
 
     const newPlayer = {
@@ -72,7 +78,9 @@ const updatePlayer = async (req, res) => {
 
     if (!collection) {
         // if collection does not exist
-        return res.status(404).json('Some error occurred connecting to the collection.');
+        return res
+            .status(404)
+            .json('Some error occurred connecting to the collection.');
     }
 
     const player = {
@@ -103,7 +111,9 @@ const deletePlayer = async (req, res) => {
 
     if (!collection) {
         // if collection does not exist
-        return res.status(404).json('Some error occurred connecting to the collection.');
+        return res
+            .status(404)
+            .json('Some error occurred connecting to the collection.');
     }
 
     const response = await collection.deleteOne({ _id: playerId }, true);
