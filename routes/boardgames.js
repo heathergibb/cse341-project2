@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const { boardgameValidationRules, validate } = require('../middleware/validate');
+const {
+    boardgameValidationRules,
+    validate
+} = require('../middleware/validate');
 const { handleErrors } = require('../middleware/error-handling');
 const boardgamesController = require('../controllers/boardgames');
 const { isAuthenticated } = require('../middleware/authenticate');
@@ -25,10 +28,7 @@ router.put(
     boardgamesController.updateBoardgame
 );
 
-router.delete('/:id',
-    isAuthenticated,
-    boardgamesController.deleteBoardgame
-);
+router.delete('/:id', isAuthenticated, boardgamesController.deleteBoardgame);
 
 router.use(handleErrors);
 

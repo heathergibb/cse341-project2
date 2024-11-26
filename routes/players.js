@@ -25,11 +25,7 @@ router.put(
     playersController.updatePlayer
 );
 
-router.delete(
-    '/:id',
-    isAuthenticated,
-     playersController.deletePlayer
-);
+router.delete('/:id', isAuthenticated, playersController.deletePlayer);
 
 router.use(handleErrors);
 
