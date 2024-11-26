@@ -5,9 +5,12 @@ router.use('/', require('./swagger'));
 router.use('/boardgames', require('./boardgames'));
 router.use('/players', require('./players'));
 
-router.get('/login', passport.authenticate('github'), (req, res) => {});
+router.get('/login', passport.authenticate('github'), (req, res) => {
+    // #swagger.ignore = true
+});
 
 router.get('/logout', function(req, res, next) {
+    // #swagger.ignore = true
     req.logout(function(err) {
         if (err) {
             return next(err);
