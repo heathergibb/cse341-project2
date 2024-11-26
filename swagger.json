@@ -5,10 +5,10 @@
     "description": "List of Board Games and Players",
     "version": "1.0.0"
   },
-  "host": "localhost:5500",
+  "host": "cse341-project2-psq1.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/boardgames/": {
